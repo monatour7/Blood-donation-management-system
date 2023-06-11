@@ -1,0 +1,27 @@
+.nav{
+    background-color: rgb(76, 71, 71);
+    padding: 4px;
+}
+.ul {
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    padding-right: 15%;
+}
+
+.li {
+    list-style-type: none;
+    width: 100%;
+}
+
+.li > a{
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+}
+
+
+
+.li > a:hover{
+    color: rgb(0, 0, 0);
+}

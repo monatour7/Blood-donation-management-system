@@ -1,0 +1,94 @@
+.bg_image{
+    background-image: url('./BankBlood2.png');
+    background-size: cover;
+    height: 120vh;
+    margin-bottom: 10%;
+    /* width: 80%;
+    margin-left: 10%; */
+  }
+
+  .header{
+    text-align: center;
+    padding-top: 22%;
+  }
+
+
+  .card {
+    margin-left: 16%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 25%;
+    height:350px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(76, 71, 71);
+    color: white;
+  }
+  .card:hover {
+    color: rgb(0, 0, 0);
+    box-shadow: inset 0 0 10px rgb(0, 0, 0);
+  }
+  .container {
+    padding: 2px 16px;
+  }
+
+  .flexContainer {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .p{
+    padding-top: 25%;
+  }
+
+  .donation_terms {
+    direction: rtl;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .center {
+    direction: 'rtl';
+
+    text-align: center;
+  }
+  .right{
+    direction: 'rtl';
+
+  }
+
+  .checkbox {
+    margin-bottom: 20px;
+  }
+  
+  .checkbox label {
+    font-weight: bold;
+  }
+  
+  .donate_button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .donate_button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .head{
+text-align: center;
+  }
+
+
+  .footer{
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 2%;
+  }

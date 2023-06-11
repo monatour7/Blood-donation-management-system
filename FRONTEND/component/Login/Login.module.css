@@ -1,0 +1,102 @@
+.auth {
+    margin: 3rem auto;
+    width: 95%;
+    max-width: 25rem;
+    border-radius: 6px;
+    background-color: rgb(76, 71, 71);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    opacity: 0.9;
+    margin-top: 12%;
+  }
+  
+  .auth h1 {
+    text-align: center;
+    color: white;
+  }
+  
+  .control {
+    margin-bottom: 0.5rem;
+  }
+  
+  .control label {
+    display: block;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .control input {
+    font: inherit;
+    background-color: #f1e1fc;
+    color: black;
+    border-radius: 4px;
+    border: 1px solid white;
+    width: 100%;
+    text-align: left;
+    padding: 0.25rem;
+        opacity: 0.5;
+
+  }
+  
+  .actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .actions button {
+    cursor: pointer;
+    font: inherit;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border-radius: 4px;
+    padding: 0.5rem 2.5rem;
+  }
+  
+  .actions button:hover {
+    color: white;
+    background-color: rgb(40, 29, 29);
+  }
+  
+  .actions .toggle {
+    margin-top: 1rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 0.15rem 1.5rem;
+  }
+  
+  .actions .toggle:hover {
+    background-color: transparent;
+  }
+
+  .main {
+    width: 100%;
+    height: 100vh;
+    background-image:url(./BankBlood.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  
+
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+    /* background-color: #000000cc; */
+  }
+
+  .footer{
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 2%;
+  }
