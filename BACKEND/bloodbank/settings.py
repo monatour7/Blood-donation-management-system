@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'django_crontab',
-    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -71,9 +70,9 @@ WSGI_APPLICATION = 'bloodbank.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bloodbank',
-        'USER': 'siksik',
-        'PASSWORD': 'siksik',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '5432',
     }

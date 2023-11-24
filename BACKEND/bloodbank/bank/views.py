@@ -1,5 +1,6 @@
 from django.db import transaction
 from django.shortcuts import get_object_or_404
+from rest_framework import viewsets
 from rest_framework.utils import json
 from bloodbank.bank.models import Donor, CustomUser, Hospital, Donation
 import pickle
@@ -7,8 +8,36 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
 import heapq
-from datetime import datetime, date
-from rest_framework_simplejwt.tokens import RefreshToken
+from datetime import date
+
+from bloodbank.bank.serializers import DonorSerializer, HospitalSerializer, DonationSerializer, CustomUserSerializer
+
+
+class DonorViewSet(viewsets.ModelViewSet):
+    queryset = Donor.objects.all()
+    serializer_class = DonorSerializer
+
+    def update(self, request, *args, **kwargs):
+        return super().update(request, *args, **kwargs)
+
+    def partial_update(self, request, *args, **kwargs):
+        return super().partial_update(request, *args, **kwargs)
+
+
+class HospitalViewSet(viewsets.ModelViewSet):
+    queryset = Hospital.objects.all()
+    serializer_class = HospitalSerializer
+
+
+class DonationViewSet(viewsets.ModelViewSet):
+    queryset = Donation.objects.all()
+    serializer_class = DonationSerializer
+
+
+class CustomUserViewSet(viewsets.ModelViewSet):
+    queryset = CustomUser.objects.all()
+    serializer_class = CustomUserSerializer
+
 
 @csrf_exempt
 def donor_get(request, donor_id=None):
@@ -188,17 +217,6 @@ def donor_login(request):
             else:
                 response = JsonResponse({'message : Wrong password.'}, status=402)
 
-        if user is not None and response is not None:
-        # Generate token
-            refresh = RefreshToken.for_user(user)
-
-        # Include the token in the response
-            response.set_cookie(
-                'refresh_token',
-                str(refresh),
-                httponly=True,
-                samesite='Strict'  # Adjust as per your requirements
-            )
         response['Access-Control-Allow-Origin'] = 'http://localhost:3000'  # Replace with your frontend URL
         return response
 

@@ -1,4 +1,3 @@
-import datetime
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 
@@ -33,7 +32,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
 
-    # Add related_name attributes to avoid clashes with auth.User model
     groups = models.ManyToManyField(
         'auth.Group',
         verbose_name='groups',
@@ -88,7 +86,7 @@ class Donor(models.Model):
     objects = models.Manager()
 
     def __str__(self):
-        return f"{self.user.first_name} {self.user.last_name}"
+        return f"{self.user.name}"
 
 
 class Hospital(models.Model):
@@ -99,7 +97,7 @@ class Hospital(models.Model):
     objects = models.Manager()
 
     def __str__(self):
-        return f"{self.user.first_name} {self.user.last_name}"
+        return f"{self.user.name}"
 
 
 class Donation(models.Model):

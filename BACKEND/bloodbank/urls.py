@@ -1,10 +1,20 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 
 from bloodbank.bank import views
+from bloodbank.bank.views import DonorViewSet, HospitalViewSet, DonationViewSet, CustomUserViewSet
+
+router = DefaultRouter()
+router.register(r'donors', DonorViewSet)
+router.register(r'hospitals', HospitalViewSet)
+router.register(r'donations', DonationViewSet)
+router.register(r'user', CustomUserViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include(router.urls)),
 
     # Donor urls
     path('donor/', views.donor_get, name='donor_get'),
