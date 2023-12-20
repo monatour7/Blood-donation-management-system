@@ -19,6 +19,7 @@ class DonationSerializer(serializers.ModelSerializer):
         model = Donation
         fields = '__all__'
 
+
 class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
