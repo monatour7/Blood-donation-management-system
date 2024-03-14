@@ -86,7 +86,7 @@ class Donor(models.Model):
     objects = models.Manager()
 
     def __str__(self):
-        return f"{self.user.name}"
+        return f"{self.user.first_name}" + f"{self.user.last_name}"
 
 
 class Hospital(models.Model):
@@ -97,7 +97,7 @@ class Hospital(models.Model):
     objects = models.Manager()
 
     def __str__(self):
-        return f"{self.user.name}"
+        return f"{self.user.first_name}" + f"{self.user.last_name}"
 
 
 class Donation(models.Model):

@@ -164,6 +164,16 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000"
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+
 SESSION_COOKIE_SECURE = False
-SESSION_COOKIE_AGE = None
+SESSION_COOKIE_AGE = 3600
 SESSION_COOKIE_HTTPONLY = False
